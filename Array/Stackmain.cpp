@@ -4,8 +4,10 @@
 int main()
 { 
     ArrayStack stack(5);
-    // Push elements onto the stack
+    
     std::cout << "Stack is " << (stack.isEmpty() ? "empty" : "not empty") << std::endl;
+
+    // Push elements onto the stack
     stack.push(10);
     stack.push(20);
     stack.push(30);
