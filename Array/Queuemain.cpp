@@ -20,7 +20,7 @@ int main ()
 
     // Get the front element
     if(!q.isEmpty())
-        std::cout<<"Front element "<<q.getFront()<<std::endl;
+        std::cout<<"Front element: "<<q.getFront()<<std::endl;
 
 
     // Get the rear element
