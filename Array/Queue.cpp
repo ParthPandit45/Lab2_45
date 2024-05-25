@@ -1,7 +1,7 @@
 #include "Queue.h"
 #include <iostream>
 
-Queue::Queue(int cap) :  maxQueueSize(cap), front(-1), rear(-1), size(0) {
+Queue::Queue(int cap) :  maxQueueSize(cap), front(-1), rear(-1){
     arr = new int[maxQueueSize];
 }
 
@@ -13,9 +13,10 @@ bool Queue::enqueue(int value) {
     if (isFull()) {
         return false;
     }
+    front=0;
     rear = (rear + 1) %  maxQueueSize;
     arr[rear] = value;
-    size++;
+  
     return true;
 }
 
@@ -24,13 +25,15 @@ bool Queue::dequeue() {
         return false;
     }
     front = (front + 1) %  maxQueueSize;
-    size--;
+   
     return true;
 }
 
 int Queue::getFront()   {
-    if (isEmpty()) {
-        throw std::runtime_error("Queue is empty");
+    if (isEmpty()) 
+    {
+        std::cout<<"Queue is empty"<<std::endl;
+        return -1;
     }
     return arr[front];
 }
@@ -45,7 +48,7 @@ int Queue::getRear() {
 }
 
 bool Queue::isEmpty()   {
-    return (size == 0);
+    return (front == rear);
 }
 
 bool Queue::isFull()   {

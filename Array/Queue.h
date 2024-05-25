@@ -5,8 +5,7 @@ private:
     int front;
     int rear;
     int maxQueueSize;
-    int size;
-
+   
 public:
     Queue(int maxQueueSize);
     ~Queue();
